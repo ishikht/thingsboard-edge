@@ -32,10 +32,8 @@ java -version
 
 MAVEN_OPTS="-Xmx1024m" NODE_OPTIONS="--max_old_space_size=4096" DOCKER_CLI_EXPERIMENTAL=enabled DOCKER_BUILDKIT=0 \
 mvn -T2 license:format clean install -DskipTests \
-  $PROJECTS --also-make
-#   \
-#  -Dpush-docker-amd-arm-images
-#  -Ddockerfile.skip=false -Dpush-docker-image=true
+  $PROJECTS --also-make \
+  -Dpush-docker-amd-arm-images -Ddockerfile.skip=false -Dpush-docker-image=true
 #  --offline
 #  --projects '!msa/web-report' --also-make
 
